@@ -1,4 +1,4 @@
-package com.reactnativeinit;
+package com.reddit;
 
 import android.support.annotation.Nullable;
 
