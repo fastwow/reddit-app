@@ -4,6 +4,8 @@ import {FAVORITES} from './key';
 export const fetchAll = () => {
   return AsyncStorage.getItem(FAVORITES).then(value => {
     return {data: JSON.parse(value)};
+  }).catch(() => {
+    return {data: {}};
   });
 };
 

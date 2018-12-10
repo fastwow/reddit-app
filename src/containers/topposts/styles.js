@@ -1,13 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  progressBar: {
-    backgroundColor: '#ffffff',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  listContainer: {
+  rootContainer: {
     flex: 1,
   },
   search: {

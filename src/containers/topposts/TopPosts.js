@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Text, TextInput, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Navigation} from 'react-native-navigation';
@@ -10,6 +10,7 @@ import {viewPost} from '../../navigation';
 import styles from './styles';
 import * as postsActions from '../../actions/PostsActions';
 import * as filterActions from '../../actions/FilterActions';
+import Filter from '../../components/posts/filter/Filter';
 
 class TopPosts extends Component {
 
@@ -22,18 +23,12 @@ class TopPosts extends Component {
     this.fetchPosts();
   }
 
-  fetchPosts = () => {
-    this.props.actions.fetchPosts();
-  };
+  fetchPosts = () => this.props.actions.fetchPosts();
 
   render() {
     return (
-      <View style={styles.listContainer}>
-        <TextInput
-          selectionColor="#ffffff" style={styles.search}
-          placeholder="Search"
-          value={this.props.searchTerm}
-          onChangeText={this.onChangeText}/>
+      <View style={styles.rootContainer}>
+        <Filter {...this.props} onChangeText={this.onChangeText}/>
         <Posts
           {...this.props}
           onClick={this.onClick}
@@ -45,31 +40,31 @@ class TopPosts extends Component {
     );
   }
 
-  onChangeText = text => {
-    this.props.actions.filter(text);
-  };
+  onChangeText = text => this.props.actions.filter(text);
 
   fetchMore = () => {
-    if (!this.props.isLoading && !this.props.isRefreshing && !this.props.searchTerm) {
+    if (!this.props.isLoading && !this.props.isRefreshing && !this.props.shouldApplyFilter) {
       this.props.actions.fetchMorePosts(this.props.after);
     }
+    return null;
   };
 
   refreshPosts = () => {
-    if (!this.props.searchTerm) {
-      this.props.actions.fetchRefreshedPosts();
+    if (!this.props.shouldApplyFilter) {
+      return this.props.actions.fetchRefreshedPosts();
     }
+    return null;
   };
 
   renderFooter = () => {
-    if (!this.props.searchTerm) {
+    if (!this.props.shouldApplyFilter) {
       return <ProgressBar/>;
     }
     return null;
   };
 
   renderEmptyMessage = () => {
-    if (this.props.searchTerm) {
+    if (this.props.shouldApplyFilter) {
       return this.renderEmptySearchResultListMessage();
     } else {
       return this.renderEmptyPostListMessage();
@@ -78,20 +73,17 @@ class TopPosts extends Component {
 
   onClick = item => viewPost(this.props.componentId, item);
 
-  renderEmptySearchResultListMessage = () => {
-    return <Text style={styles.emptyMessageStyle}>No matching posts found</Text>;
-  };
+  renderEmptySearchResultListMessage = () => <Text style={styles.emptyMessageStyle}>No matching posts found</Text>;
 
-  renderEmptyPostListMessage = () => {
-    return <Text style={styles.emptyMessageStyle}>No posts yet</Text>;
-  };
+  renderEmptyPostListMessage = () => <Text style={styles.emptyMessageStyle}>No posts yet</Text>;
 }
 
 TopPosts.propTypes = {
   actions: PropTypes.object.isRequired,
   isLoading: PropTypes.bool,
   isRefreshing: PropTypes.bool,
-  searchTerm: PropTypes.string,
+  filter: PropTypes.object.isRequired,
+  shouldApplyFilter: PropTypes.bool,
   posts: PropTypes.array,
   navigator: PropTypes.object,
   after: PropTypes.string,
@@ -99,24 +91,24 @@ TopPosts.propTypes = {
 };
 
 const mapStateToProps = ({posts, filter}) => {
+  const shouldApplyFilter = filter.searchTerm.length > 2;
   return {
-    searchTerm: filter.searchTerm,
-    posts: applySearchTerm(posts.posts, filter.searchTerm),
+    filter,
+    shouldApplyFilter,
+    posts: shouldApplyFilter ? applyFilter(posts.posts, filter) : posts.posts,
     isLoading: posts.isLoading,
     isRefreshing: posts.isRefreshing,
     after: posts.after,
   };
 };
 
-const applySearchTerm = (posts, searchTerm) => {
-  if (searchTerm.length > 2) {
-    const lowerCaseSearchTerm = searchTerm.toLowerCase();
-    return posts.filter(item => {
-      return item.title.toLowerCase().includes(lowerCaseSearchTerm);
-    });
-  }
-  return posts;
+const applyFilter = (posts, filter) => {
+  const lowerCaseSearchTerm = filter.searchTerm.toLowerCase();
+  return posts.filter(item => {
+    return item.title.toLowerCase().includes(lowerCaseSearchTerm);
+  });
 };
+
 
 const mapDispatchToProps = dispatch => {
   return {

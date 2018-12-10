@@ -4,10 +4,12 @@ import {FlatList} from 'react-native';
 import ProgressBar from '../common/ProgressBar';
 import PostCart from './item/PostCart';
 
-const Posts = ({isLoading, isRefreshing, posts, refreshPosts, onClick, fetchMore, renderFooter,
-  renderEmptyMessage}) => {
+const Posts = ({
+  isLoading, isRefreshing, posts, refreshPosts, onClick, fetchMore, renderFooter,
+  renderEmptyMessage,
+}) => {
 
-  return (isLoading && !posts.length ? <ProgressBar/> : <FlatList
+  return isLoading && !posts.length ? <ProgressBar/> : <FlatList
     onRefresh={refreshPosts}
     refreshing={isRefreshing}
     data={posts}
@@ -17,7 +19,7 @@ const Posts = ({isLoading, isRefreshing, posts, refreshPosts, onClick, fetchMore
     onEndReachedThreshold={0.5}
     ListFooterComponent={renderFooter}
     ListEmptyComponent={renderEmptyMessage}
-  />);
+  />;
 };
 
 Posts.propTypes = {
@@ -29,6 +31,13 @@ Posts.propTypes = {
   fetchMore: PropTypes.func.isRequired,
   renderFooter: PropTypes.func.isRequired,
   renderEmptyMessage: PropTypes.func.isRequired,
+};
+
+Posts.defaultProps = {
+  fetchMore: () => {},
+  isRefreshing: false,
+  refreshPosts: () => {},
+  renderFooter: () => null,
 };
 
 export default Posts;

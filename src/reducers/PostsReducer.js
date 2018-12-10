@@ -6,8 +6,6 @@ import {
   FILTER_POSTS_SUCCESS,
   FETCH_REFRESHED_POSTS_SUCCESS,
   FETCH_REFRESHED_POSTS_STARTED,
-  FETCH_FAVORITES_POSTS_STARTED,
-  FETCH_FAVORITES_POSTS_SUCCESS,
 } from '../actions/types';
 import initialState from './initialState';
 
@@ -56,19 +54,6 @@ export default function (state = initialState.posts, action) {
         isRefreshing: false,
         posts: state.posts.concat(action.data.children.map(c => c.data)),
         after: action.data.after,
-      };
-    case FETCH_FAVORITES_POSTS_STARTED:
-      return {
-        ...state,
-        isLoading: true,
-        isRefreshing: false,
-      };
-    case FETCH_FAVORITES_POSTS_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-        isRefreshing: false,
-        favorites: action.data,
       };
     case FILTER_POSTS_SUCCESS:
       return {

@@ -1,5 +1,5 @@
 import {Navigation} from 'react-native-navigation';
-import {FAVORITES, POST, POSTS} from './constants/componentName';
+import {FAVORITES, POST, TOP_POSTS} from './constants/componentName';
 
 export const createTabs = () => Navigation.setRoot({
   root: {
@@ -11,7 +11,7 @@ export const createTabs = () => Navigation.setRoot({
             children: [
               {
                 component: {
-                  name: POSTS,
+                  name: TOP_POSTS,
                   options: {
                     topBar: {
                       visible: false,
