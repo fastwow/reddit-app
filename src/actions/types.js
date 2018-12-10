@@ -8,4 +8,4 @@ export const FETCH_FAVORITES_POSTS_STARTED = 'fetch_favorites_posts_started';
 export const FETCH_FAVORITES_POSTS_SUCCESS = 'fetch_favorites_posts_success';
 export const ADD_TO_FAVORITE_SUCCESS = 'add_to_favorite_success';
 export const REMOVE_FROM_FAVORITE_SUCCESS = 'remove_from_favorite_success';
-export const SEARCH_POST_SUCCESS = 'search_post_success';
+export const FILTER_POSTS_SUCCESS = 'search_post_success';

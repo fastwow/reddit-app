@@ -3,7 +3,7 @@ import {
   FETCH_POSTS_SUCCESS,
   FETCH_POSTS_STARTED,
   FETCH_MORE_POSTS_STARTED,
-  SEARCH_POST_SUCCESS,
+  FILTER_POSTS_SUCCESS,
   FETCH_REFRESHED_POSTS_SUCCESS,
   FETCH_REFRESHED_POSTS_STARTED,
   FETCH_FAVORITES_POSTS_STARTED,
@@ -70,7 +70,7 @@ export default function (state = initialState.posts, action) {
         isRefreshing: false,
         favorites: action.data,
       };
-    case SEARCH_POST_SUCCESS:
+    case FILTER_POSTS_SUCCESS:
       return {
         ...state,
         searchTerm: action.searchTerm,

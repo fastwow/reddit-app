@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {WebView} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import styles from './styles';
 
-class PostPage extends Component {
+class PostPage extends PureComponent {
 
   constructor(props) {
     super(props);

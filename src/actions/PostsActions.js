@@ -10,40 +10,30 @@ import {
   REMOVE_FROM_FAVORITE_SUCCESS,
   FETCH_FAVORITES_POSTS_STARTED,
   FETCH_FAVORITES_POSTS_SUCCESS,
-  SEARCH_POST_SUCCESS,
 } from './types';
 import {fetchAll, add, remove} from '../storage/favoritesStorage';
 
-export const fetchPosts = dispatch => fetchPostsFromReddit(dispatch, FETCH_POSTS_STARTED, FETCH_POSTS_SUCCESS);
+export const fetchPosts = after => dispatch => fetchPostsFromReddit(dispatch, after, FETCH_POSTS_STARTED, FETCH_POSTS_SUCCESS);
 
-export const fetchMorePosts = dispatch => fetchPostsFromReddit(dispatch, FETCH_MORE_POSTS_STARTED,
+export const fetchMorePosts = after => dispatch => fetchPostsFromReddit(dispatch, after, FETCH_MORE_POSTS_STARTED,
   FETCH_MORE_POSTS_SUCCESS);
 
-export const fetchRefreshedPosts = dispatch => fetchPostsFromReddit(dispatch, FETCH_REFRESHED_POSTS_STARTED,
+export const fetchRefreshedPosts = dispatch => fetchPostsFromReddit(dispatch, '', FETCH_REFRESHED_POSTS_STARTED,
   FETCH_REFRESHED_POSTS_SUCCESS);
 
-const fetchPostsFromReddit = (dispatch, requestType, successType) => {
-  return dispatch => {
-    dispatch({type: requestType});
-    return fetchTopPosts()
-      .then(res => {
-        dispatch({
-          type: successType,
-          data: res,
-        });
-      })
-      .catch(error => {
-        console.log(error);
+const fetchPostsFromReddit = (dispatch, after = '', requestType, successType) => {
+  dispatch({type: requestType});
+  return fetchTopPosts(after)
+    .then(res => {
+      dispatch({
+        type: successType,
+        data: res,
       });
-  };
+    })
+    .catch(error => {
+      console.log(error);
+    });
 };
-
-export function search(searchTerm) {
-  return {
-    type: SEARCH_POST_SUCCESS,
-    searchTerm,
-  };
-}
 
 export const fetchFavorites = () => {
   return function (dispatch) {
