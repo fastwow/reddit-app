@@ -1,5 +1,5 @@
 import {TextInput} from 'react-native';
-import styles from '../../../containers/topposts/styles';
+import styles from './styles';
 import PropTypes from 'prop-types';
 import React from 'react';
 

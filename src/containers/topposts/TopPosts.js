@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Navigation} from 'react-native-navigation';
 import Posts from '../../components/posts/Posts';
-import ProgressBar from '../../components/common/ProgressBar';
 import {viewPost} from '../../navigation';
 import styles from './styles';
-import * as postsActions from '../../actions/PostsActions';
-import * as filterActions from '../../actions/FilterActions';
+import * as postsActions from '../../actions/postsActions';
+import * as filterActions from '../../actions/filterActions';
 import Filter from '../../components/posts/filter/Filter';
 
 class TopPosts extends Component {
@@ -33,9 +32,7 @@ class TopPosts extends Component {
           {...this.props}
           onClick={this.onClick}
           refreshPosts={this.refreshPosts}
-          fetchMore={this.fetchMore}
-          renderEmptyMessage={this.renderEmptyMessage}
-          renderFooter={this.renderFooter}/>
+          fetchMore={this.fetchMore}/>
       </View>
     );
   }
@@ -56,26 +53,9 @@ class TopPosts extends Component {
     return null;
   };
 
-  renderFooter = () => {
-    if (!this.props.shouldApplyFilter) {
-      return <ProgressBar/>;
-    }
-    return null;
-  };
-
-  renderEmptyMessage = () => {
-    if (this.props.shouldApplyFilter) {
-      return this.renderEmptySearchResultListMessage();
-    } else {
-      return this.renderEmptyPostListMessage();
-    }
-  };
-
-  onClick = item => viewPost(this.props.componentId, item);
-
-  renderEmptySearchResultListMessage = () => <Text style={styles.emptyMessageStyle}>No matching posts found</Text>;
-
-  renderEmptyPostListMessage = () => <Text style={styles.emptyMessageStyle}>No posts yet</Text>;
+  onClick = item => {
+    viewPost(this.props.componentId, item);
+  }
 }
 
 TopPosts.propTypes = {

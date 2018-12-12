@@ -1,14 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  rootContainer: {
-    flex: 1,
-  },
-  emptyMessageStyle: {
+  search: {
+    height: 40,
     textAlign: 'center',
-    flex: 1,
-    alignItems: 'center',
-    flexGrow: 1,
+    color: '#000000',
+    margin: 5,
   },
 });
 

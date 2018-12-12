@@ -1,9 +1,19 @@
 import {Navigation} from 'react-native-navigation';
-import {Provider} from 'react-redux';
 import {registerScreens} from './src/screens';
 import configureStore from './src/config/store';
 import {createTabs} from './src/navigation';
+import {persistStore} from 'redux-persist';
+import {Provider} from 'react-redux';
 
-registerScreens(Provider, configureStore());
+const store = configureStore({});
 
-Navigation.events().registerAppLaunchedListener(createTabs);
+const bootstrap = () => {
+  persistStore(store, undefined, () => {
+    registerScreens(Provider, store);
+    createTabs();
+  });
+};
+
+Navigation.events().registerAppLaunchedListener(() => {
+  bootstrap();
+});
