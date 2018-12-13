@@ -16,7 +16,11 @@ const Posts = ({
 
   const isEmptyList = !posts.length;
 
-  return isLoading && isEmptyList ? <ProgressBar/> : <FlatList
+  if (isLoading && isEmptyList) {
+    return <ProgressBar/>;
+  }
+
+  return (<FlatList
     onRefresh={refreshPosts}
     refreshing={isRefreshing}
     data={posts}
@@ -24,9 +28,10 @@ const Posts = ({
     keyExtractor={item => item.id}
     onEndReached={fetchMore}
     onEndReachedThreshold={0.5}
+    contentContainerStyle={[{flexGrow: 1}, isEmptyList ? {justifyContent: 'center'} : null]}
     ListFooterComponent={() => !shouldApplyFilter && fetchMore && !isEmptyList ? <ProgressBar/> : null}
     ListEmptyComponent={() => <Text style={styles.emptyMessageStyle}>{errorMessage && isEmptyList ? errorMessage :
-      shouldApplyFilter ? 'No matching posts found' : 'No posts yet'}</Text>}/>;
+      shouldApplyFilter ? 'No matching posts found' : 'No posts yet'}</Text>}/>);
 };
 
 Posts.propTypes = {

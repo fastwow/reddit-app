@@ -12,7 +12,7 @@ class PostCart extends PureComponent {
         <Image
           style={styles.image}
           source={{
-            uri: item.thumbnail ? item.thumbnail : 'https://ipsumimage.appspot.com/70x70',
+            uri: item.thumbnail && item.thumbnail !== 'default' ? item.thumbnail : 'https://ipsumimage.appspot.com/70x70'
           }}
         />
       </View>
