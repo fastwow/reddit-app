@@ -11,7 +11,7 @@ export default function (state = initialState.favorites, action) {
     case REMOVE_FROM_FAVORITE_SUCCESS:
       return {
         ...state,
-        posts: state.items.filter(item => action.data.id !== item.id)
+        posts: state.posts.filter(item => action.data.id !== item.id),
       };
     default:
       return state;

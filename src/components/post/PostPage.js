@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import {WebView} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import styles from './styles';
-import connect from 'react-redux/es/connect/connect';
-import {bindActionCreators} from 'redux';
-import {addToFavorite} from '../../actions/favoriteActions';
+import {connect} from 'react-redux';
+import {addToFavorite, removeFromFavorite} from '../../actions/favoriteActions';
 
 class PostPage extends Component {
 
@@ -14,18 +13,17 @@ class PostPage extends Component {
     Navigation.events().bindComponent(this);
   }
 
-  static get options() {
-    return {
+  render() {
+    Navigation.mergeOptions(this.props.componentId, {
       topBar: {
         rightButtons: [{
           id: 'favoriteBtn',
-          text: 'Favorite',
+          icon: this.props.isFavorite ? require('../../../img/favorite_selected.png') :
+            require('../../../img/favorite_unselected.png'),
         }],
       },
-    };
-  }
+    });
 
-  render() {
     return (
       <WebView
         source={{uri: this.props.post.url}}
@@ -37,9 +35,9 @@ class PostPage extends Component {
   navigationButtonPressed({buttonId}) {
     if (buttonId === 'favoriteBtn') {
       if (this.props.isFavorite) {
-        this.props.actions.addToFavorite(this.props.post);
+        this.props.removeFromFavorite(this.props.post);
       } else {
-        this.props.actions.removeFromFavorite(this.props.post);
+        this.props.addToFavorite(this.props.post);
       }
     }
   }
@@ -47,20 +45,20 @@ class PostPage extends Component {
 
 PostPage.propTypes = {
   post: PropTypes.shape({url: PropTypes.string}).isRequired,
-  actions: PropTypes.object.isRequired,
   isFavorite: PropTypes.bool.isRequired,
   componentId: PropTypes.string,
+  addToFavorite: PropTypes.func.isRequired,
+  removeFromFavorite: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({favorites}) => {
-  return {
-    isFavorite: favorites.posts.filter(item => this.props.post.id === item.id).length > 0,
-  };
+const mapStateToProps = ({favorites}, {post}) => {
+  return {isFavorite: favorites.posts.filter(item => item.id === post.id).length > 0};
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators(addToFavorite, dispatch),
+    addToFavorite: item => dispatch(addToFavorite(item)),
+    removeFromFavorite: item => dispatch(removeFromFavorite(item)),
   };
 };
 
