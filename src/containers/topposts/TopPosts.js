@@ -62,6 +62,7 @@ TopPosts.propTypes = {
   actions: PropTypes.object.isRequired,
   isLoading: PropTypes.bool,
   isRefreshing: PropTypes.bool,
+  errorMessage: PropTypes.string,
   filter: PropTypes.object.isRequired,
   shouldApplyFilter: PropTypes.bool,
   posts: PropTypes.array,
@@ -78,6 +79,7 @@ const mapStateToProps = ({posts, filter}) => {
     posts: shouldApplyFilter ? applyFilter(posts.posts, filter) : posts.posts,
     isLoading: posts.isLoading,
     isRefreshing: posts.isRefreshing,
+    errorMessage: posts.errorMessage,
     after: posts.after,
   };
 };

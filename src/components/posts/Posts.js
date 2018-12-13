@@ -4,12 +4,19 @@ import {FlatList, Text} from 'react-native';
 import ProgressBar from '../common/ProgressBar';
 import PostCart from './item/PostCart';
 import styles from '../../containers/topposts/styles';
+import Toast from 'react-native-simple-toast';
 
 const Posts = ({
-  isLoading, isRefreshing, posts, refreshPosts, onClick, fetchMore, shouldApplyFilter,
+  isLoading, isRefreshing, posts, errorMessage, refreshPosts, onClick, fetchMore, shouldApplyFilter,
 }) => {
 
-  return isLoading && !posts.length ? <ProgressBar/> : <FlatList
+  if (errorMessage) {
+    Toast.show(errorMessage);
+  }
+
+  const isEmptyList = !posts.length;
+
+  return isLoading && isEmptyList ? <ProgressBar/> : <FlatList
     onRefresh={refreshPosts}
     refreshing={isRefreshing}
     data={posts}
@@ -17,14 +24,15 @@ const Posts = ({
     keyExtractor={item => item.id}
     onEndReached={fetchMore}
     onEndReachedThreshold={0.5}
-    ListFooterComponent={() => !shouldApplyFilter && fetchMore ? <ProgressBar/> : null}
-    ListEmptyComponent={() => <Text style={styles.emptyMessageStyle}>{shouldApplyFilter ? 'No matching posts found' :
-      'No posts yet'}</Text>}/>;
+    ListFooterComponent={() => !shouldApplyFilter && fetchMore && !isEmptyList ? <ProgressBar/> : null}
+    ListEmptyComponent={() => <Text style={styles.emptyMessageStyle}>{errorMessage && isEmptyList ? errorMessage :
+      shouldApplyFilter ? 'No matching posts found' : 'No posts yet'}</Text>}/>;
 };
 
 Posts.propTypes = {
   isLoading: PropTypes.bool,
   posts: PropTypes.array.isRequired,
+  errorMessage: PropTypes.string,
   isRefreshing: PropTypes.bool,
   refreshPosts: PropTypes.func,
   onClick: PropTypes.func.isRequired,
@@ -37,6 +45,7 @@ Posts.defaultProps = {
   isRefreshing: false,
   refreshPosts: null,
   fetchMore: null,
+  errorMessage: null,
   shouldApplyFilter: false,
 };
 
