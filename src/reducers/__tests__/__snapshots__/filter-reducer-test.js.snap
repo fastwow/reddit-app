@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles filter_posts action 1`] = `
+Object {
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
+
+exports[`returns the same state for filter reducer on an unhandled action 1`] = `
+Object {
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;

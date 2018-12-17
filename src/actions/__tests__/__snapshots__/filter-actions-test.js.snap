@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates filter_posts action 1`] = `
+Object {
+  "searchTerm": "cat",
+  "type": "filter_posts",
+}
+`;

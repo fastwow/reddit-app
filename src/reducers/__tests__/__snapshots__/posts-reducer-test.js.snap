@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles fetch_more_posts_FAILURE action 1`] = `
+Object {
+  "error": "Look ma, I am an error!",
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "isLoading": false,
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
+
+exports[`handles fetch_more_posts_REQUEST action 1`] = `
+Object {
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
+
+exports[`handles fetch_more_posts_SUCCESS action 1`] = `
+Object {
+  "after": undefined,
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "isLoading": false,
+  "posts": Array [
+    Object {
+      "id": "98vj9e",
+      "thumbnail": "https://b.thumbs.redditmedia.com/NFJ5zzCUnxTgAl71EkjSSCePc7wtcCLqTdbYgrwJkdU.jpg",
+      "title": "Blinks of affection",
+      "url": "https://v.redd.it/1zhxx58rhp421",
+    },
+    Object {
+      "id": "a6q94b",
+      "thumbnail": "https://b.thumbs.redditmedia.com/cjYmtjKiy9OT1y43RFMuTkcH_WmTM66RsSuN7c6xkhA.jpg",
+      "title": "This church looks like a gingerbread house.",
+      "url": "https://i.imgur.com/GsoJi0d.gifv",
+    },
+    Object {
+      "id": "98vj9e",
+      "thumbnail": "https://b.thumbs.redditmedia.com/NFJ5zzCUnxTgAl71EkjSSCePc7wtcCLqTdbYgrwJkdU.jpg",
+      "title": "Blinks of affection",
+      "url": "https://v.redd.it/1zhxx58rhp421",
+    },
+    Object {
+      "id": "a6q94b",
+      "thumbnail": "https://b.thumbs.redditmedia.com/cjYmtjKiy9OT1y43RFMuTkcH_WmTM66RsSuN7c6xkhA.jpg",
+      "title": "This church looks like a gingerbread house.",
+      "url": "https://i.imgur.com/GsoJi0d.gifv",
+    },
+  ],
+}
+`;
+
+exports[`handles fetch_posts_FAILURE action 1`] = `
+Object {
+  "error": "Look ma, I am an error!",
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "isLoading": false,
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
+
+exports[`handles fetch_posts_REQUEST action 1`] = `
+Object {
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
+
+exports[`handles fetch_posts_SUCCESS action 1`] = `
+Object {
+  "after": undefined,
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "isLoading": false,
+  "posts": Array [
+    Object {
+      "id": "98vj9e",
+      "thumbnail": "https://b.thumbs.redditmedia.com/NFJ5zzCUnxTgAl71EkjSSCePc7wtcCLqTdbYgrwJkdU.jpg",
+      "title": "Blinks of affection",
+      "url": "https://v.redd.it/1zhxx58rhp421",
+    },
+    Object {
+      "id": "a6q94b",
+      "thumbnail": "https://b.thumbs.redditmedia.com/cjYmtjKiy9OT1y43RFMuTkcH_WmTM66RsSuN7c6xkhA.jpg",
+      "title": "This church looks like a gingerbread house.",
+      "url": "https://i.imgur.com/GsoJi0d.gifv",
+    },
+  ],
+}
+`;
+
+exports[`handles fetch_refreshed_posts_FAILURE action 1`] = `
+Object {
+  "error": "Look ma, I am an error!",
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "isRefreshing": false,
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
+
+exports[`handles fetch_refreshed_posts_REQUEST action 1`] = `
+Object {
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
+
+exports[`handles fetch_refreshed_posts_SUCCESS action 1`] = `
+Object {
+  "after": undefined,
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "isRefreshing": false,
+  "posts": Array [
+    Object {
+      "id": "98vj9e",
+      "thumbnail": "https://b.thumbs.redditmedia.com/NFJ5zzCUnxTgAl71EkjSSCePc7wtcCLqTdbYgrwJkdU.jpg",
+      "title": "Blinks of affection",
+      "url": "https://v.redd.it/1zhxx58rhp421",
+    },
+    Object {
+      "id": "a6q94b",
+      "thumbnail": "https://b.thumbs.redditmedia.com/cjYmtjKiy9OT1y43RFMuTkcH_WmTM66RsSuN7c6xkhA.jpg",
+      "title": "This church looks like a gingerbread house.",
+      "url": "https://i.imgur.com/GsoJi0d.gifv",
+    },
+  ],
+}
+`;
+
+exports[`returns the same state for posts reducer on an unhandled action 1`] = `
+Object {
+  "favorites": Object {
+    "posts": Array [],
+  },
+  "filter": Object {
+    "searchTerm": "",
+  },
+  "posts": Object {
+    "after": "",
+    "error": "",
+    "isLoading": false,
+    "isRefreshing": false,
+    "posts": Array [],
+  },
+}
+`;
