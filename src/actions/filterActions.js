@@ -1,8 +1,8 @@
-import {FILTER_POSTS_SUCCESS} from './types';
+import {FILTER_POSTS} from './types';
 
 export function filter(searchTerm) {
   return {
-    type: FILTER_POSTS_SUCCESS,
+    type: FILTER_POSTS,
     searchTerm,
   };
 }

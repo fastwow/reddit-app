@@ -7,11 +7,11 @@ import styles from '../../containers/topposts/styles';
 import Toast from 'react-native-simple-toast';
 
 const Posts = ({
-  isLoading, isRefreshing, posts, errorMessage, refreshPosts, onClick, fetchMore, shouldApplyFilter,
+  isLoading, isRefreshing, posts, error, refreshPosts, onClick, fetchMore, shouldApplyFilter,
 }) => {
 
-  if (errorMessage) {
-    Toast.show(errorMessage);
+  if (error) {
+    Toast.show(error);
   }
 
   const isEmptyList = !posts.length;
@@ -30,14 +30,14 @@ const Posts = ({
     onEndReachedThreshold={0.5}
     contentContainerStyle={[{flexGrow: 1}, isEmptyList ? {justifyContent: 'center'} : null]}
     ListFooterComponent={() => !shouldApplyFilter && fetchMore && !isEmptyList ? <ProgressBar/> : null}
-    ListEmptyComponent={() => <Text style={styles.emptyMessageStyle}>{errorMessage && isEmptyList ? errorMessage :
+    ListEmptyComponent={() => <Text style={styles.emptyMessageStyle}>{error && isEmptyList ? error :
       shouldApplyFilter ? 'No matching posts found' : 'No posts yet'}</Text>}/>);
 };
 
 Posts.propTypes = {
   isLoading: PropTypes.bool,
   posts: PropTypes.array.isRequired,
-  errorMessage: PropTypes.string,
+  error: PropTypes.string,
   isRefreshing: PropTypes.bool,
   refreshPosts: PropTypes.func,
   onClick: PropTypes.func.isRequired,
@@ -50,7 +50,7 @@ Posts.defaultProps = {
   isRefreshing: false,
   refreshPosts: null,
   fetchMore: null,
-  errorMessage: null,
+  error: null,
   shouldApplyFilter: false,
 };
 

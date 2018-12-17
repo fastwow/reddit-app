@@ -1,5 +1,5 @@
 export default {
-  posts: {isLoading: false, isRefreshing: false, errorMessage: '', posts: [], after: ''},
+  posts: {isLoading: false, isRefreshing: false, error: '', posts: [], after: ''},
   favorites: {posts: []},
   filter: {searchTerm: ''},
 };

@@ -1,12 +1,10 @@
-export const FETCH_POSTS_STARTED = 'fetch_posts_started';
-export const FETCH_POSTS_SUCCESS = 'fetch_posts_success';
-export const FETCH_POSTS_ERROR = 'fetch_posts_error';
-export const FETCH_MORE_POSTS_STARTED = 'fetch_more_posts_started';
-export const FETCH_MORE_POSTS_SUCCESS = 'fetch_more_posts_success';
-export const FETCH_MORE_POSTS_ERROR = 'fetch_more_posts_error';
-export const FETCH_REFRESHED_POSTS_STARTED = 'fetch_refreshed_posts_started';
-export const FETCH_REFRESHED_POSTS_SUCCESS = 'fetch_refreshed_posts_success';
-export const FETCH_REFRESHED_POSTS_ERROR = 'fetch_refreshed_posts_error';
-export const ADD_TO_FAVORITE_SUCCESS = 'add_to_favorite_success';
-export const REMOVE_FROM_FAVORITE_SUCCESS = 'remove_from_favorite_success';
-export const FILTER_POSTS_SUCCESS = 'search_post_success';
+import {asyncActionNames} from './utils/asyncUtils';
+
+export const FETCH_POSTS = asyncActionNames('fetch_posts');
+export const FETCH_MORE_POSTS = asyncActionNames('fetch_more_posts');
+export const FETCH_REFRESHED_POSTS = asyncActionNames('fetch_refreshed_posts');
+
+export const FILTER_POSTS = 'filter_posts';
+
+export const ADD_TO_FAVORITE = 'add_to_favorite';
+export const REMOVE_FROM_FAVORITE = 'remove_from_favorite';

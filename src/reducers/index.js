@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
-import PostsReducer from './PostsReducer';
-import SearchReducer from './FilterReducer';
-import FavoritesReducer from './FavoritesReducer';
+import PostsReducer from './postsReducer';
+import SearchReducer from './filterReducer';
+import FavoritesReducer from './favoritesReducer';
 
 const rootReducer = combineReducers({
   posts: PostsReducer,
