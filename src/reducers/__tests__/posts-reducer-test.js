@@ -1,7 +1,7 @@
 import initialState from '../initialState';
 import postsReducer from '../postsReducer';
 import {FETCH_MORE_POSTS, FETCH_POSTS, FETCH_REFRESHED_POSTS} from '../../actions/types';
-import {postResponse, posts} from '../../config/jest/mockData';
+import {postsResponse, posts} from '../../config/jest/mockData';
 import filterReducer from '../filterReducer';
 
 it('returns the same state for posts reducer on an unhandled action', () => {
@@ -18,7 +18,7 @@ it('handles ' + FETCH_POSTS.failure + ' action', () => {
 });
 
 it('handles ' + FETCH_POSTS.success + ' action', () => {
-  expect(postsReducer(initialState, {data: postResponse, type: FETCH_POSTS.success})).toMatchSnapshot();
+  expect(postsReducer(initialState, {data: postsResponse, type: FETCH_POSTS.success})).toMatchSnapshot();
 });
 
 it('handles ' + FETCH_MORE_POSTS.request + ' action', () => {
@@ -32,7 +32,7 @@ it('handles ' + FETCH_MORE_POSTS.failure + ' action', () => {
 
 it('handles ' + FETCH_MORE_POSTS.success + ' action', () => {
   expect(postsReducer({...initialState, posts}, {
-    data: postResponse,
+    data: postsResponse,
     type: FETCH_MORE_POSTS.success,
   })).toMatchSnapshot();
 });
@@ -47,5 +47,5 @@ it('handles ' + FETCH_REFRESHED_POSTS.failure + ' action', () => {
 });
 
 it('handles ' + FETCH_REFRESHED_POSTS.success + ' action', () => {
-  expect(postsReducer(initialState, {data: postResponse, type: FETCH_REFRESHED_POSTS.success})).toMatchSnapshot();
+  expect(postsReducer(initialState, {data: postsResponse, type: FETCH_REFRESHED_POSTS.success})).toMatchSnapshot();
 });

@@ -1,4 +1,4 @@
-export const postResponse = {
+export const postsResponse = {
   children: [
     {
       data: {
@@ -19,4 +19,4 @@ export const postResponse = {
   ],
 };
 
-export const posts = postResponse.children.map(c => c.data);
+export const posts = postsResponse.children.map(c => c.data);

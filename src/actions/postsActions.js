@@ -2,7 +2,7 @@ import {fetchTopPosts} from '../api/reddit';
 import {FETCH_POSTS, FETCH_MORE_POSTS, FETCH_REFRESHED_POSTS} from './types';
 import {buildAsyncActions} from './utils/asyncUtils';
 
-export const fetchPosts = () => dispatch => fetchPostsFromReddit(dispatch, fetchPostsPostsActions);
+export const fetchPosts = () => dispatch => fetchPostsFromReddit(dispatch, fetchPostsActions);
 
 export const fetchMorePosts = after => dispatch => fetchPostsFromReddit(dispatch, fetchMorePostsActions, after);
 
@@ -15,7 +15,7 @@ const fetchPostsFromReddit = (dispatch, actions, after = '') => {
     .catch(error => dispatch(actions.failure(getErrorMessage(error))));
 };
 
-export const fetchPostsPostsActions = buildAsyncActions(FETCH_POSTS);
+export const fetchPostsActions = buildAsyncActions(FETCH_POSTS);
 export const fetchMorePostsActions = buildAsyncActions(FETCH_MORE_POSTS);
 export const fetchRefreshedPostsActions = buildAsyncActions(FETCH_REFRESHED_POSTS);
 
