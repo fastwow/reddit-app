@@ -22,38 +22,36 @@ beforeEach(() => {
   store.clearActions();
 });
 
+afterEach(() => {
+  expect(store.getActions()).toMatchSnapshot();
+});
+
 it('should handle ' + FETCH_POSTS.success + ' action', async () => {
   mock.onGet().reply(200, successResponse);
   await store.dispatch(fetchPosts(fetchPostsActions));
-  expect(store.getActions()).toMatchSnapshot();
 });
 
 it('should handle ' + FETCH_POSTS.failure + ' action', async () => {
   mock.onGet().reply(404, errorResponse);
   await store.dispatch(fetchPosts(fetchPostsActions));
-  expect(store.getActions()).toMatchSnapshot();
 });
 
 it('should handle ' + FETCH_MORE_POSTS.success + ' action', async () => {
   mock.onGet().reply(200, successResponse);
   await store.dispatch(fetchMorePosts(fetchMorePostsActions));
-  expect(store.getActions()).toMatchSnapshot();
 });
 
 it('should handle ' + FETCH_MORE_POSTS.failure + ' action', async () => {
   mock.onGet().reply(404, errorResponse);
   await store.dispatch(fetchMorePosts(fetchMorePostsActions));
-  expect(store.getActions()).toMatchSnapshot();
 });
 
 it('should handle ' + FETCH_REFRESHED_POSTS.success + ' action', async () => {
   mock.onGet().reply(200, successResponse);
   await store.dispatch(fetchRefreshedPosts(fetchRefreshedPostsActions));
-  expect(store.getActions()).toMatchSnapshot();
 });
 
 it('should handle ' + FETCH_REFRESHED_POSTS.failure + ' action', async () => {
   mock.onGet().reply(404, errorResponse);
   await store.dispatch(fetchRefreshedPosts(fetchRefreshedPostsActions));
-  expect(store.getActions()).toMatchSnapshot();
 });
