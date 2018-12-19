@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostCart renders correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderBottomColor": "#d6d7da",
+      "borderBottomWidth": 1,
+      "flex": 1,
+      "flexDirection": "row",
+      "opacity": 1,
+      "padding": 6,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "padding": 5,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://b.thumbs.redditmedia.com/NFJ5zzCUnxTgAl71EkjSSCePc7wtcCLqTdbYgrwJkdU.jpg",
+        }
+      }
+      style={
+        Object {
+          "height": 70,
+          "width": 70,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+          "margin": 6,
+          "textAlign": "left",
+        }
+      }
+    >
+      Blinks of affection
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`PostCart renders with image placeholder 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderBottomColor": "#d6d7da",
+      "borderBottomWidth": 1,
+      "flex": 1,
+      "flexDirection": "row",
+      "opacity": 1,
+      "padding": 6,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "padding": 5,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https://ipsumimage.appspot.com/70x70",
+        }
+      }
+      style={
+        Object {
+          "height": 70,
+          "width": 70,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+          "margin": 6,
+          "textAlign": "left",
+        }
+      }
+    >
+      Blinks of affection
+    </Text>
+  </View>
+</View>
+`;

@@ -1,4 +1,4 @@
-import {fetchTopPosts} from '../api/reddit';
+import {fetchTopPosts} from '../api/redditApi';
 import {FETCH_POSTS, FETCH_MORE_POSTS, FETCH_REFRESHED_POSTS} from './types';
 import {buildAsyncActions} from './utils/asyncUtils';
 

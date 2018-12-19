@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter renders correctly 1`] = `
+<TextInput
+  allowFontScaling={true}
+  onChangeText={[MockFunction]}
+  placeholder="Search"
+  selectionColor="#ffffff"
+  style={
+    Object {
+      "color": "#000000",
+      "height": 40,
+      "margin": 5,
+      "textAlign": "center",
+    }
+  }
+  value="cat"
+/>
+`;
