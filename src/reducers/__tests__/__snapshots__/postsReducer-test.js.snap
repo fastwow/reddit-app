@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`handles fetch_more_posts_FAILURE action 1`] = `
+exports[`postsReducer handles fetch_more_posts_FAILURE action 1`] = `
 Object {
   "error": "Look ma, I am an error!",
   "favorites": Object {
@@ -20,7 +20,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_more_posts_REQUEST action 1`] = `
+exports[`postsReducer handles fetch_more_posts_REQUEST action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],
@@ -38,7 +38,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_more_posts_SUCCESS action 1`] = `
+exports[`postsReducer handles fetch_more_posts_SUCCESS action 1`] = `
 Object {
   "after": undefined,
   "favorites": Object {
@@ -77,7 +77,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_posts_FAILURE action 1`] = `
+exports[`postsReducer handles fetch_posts_FAILURE action 1`] = `
 Object {
   "error": "Look ma, I am an error!",
   "favorites": Object {
@@ -97,7 +97,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_posts_REQUEST action 1`] = `
+exports[`postsReducer handles fetch_posts_REQUEST action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],
@@ -115,7 +115,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_posts_SUCCESS action 1`] = `
+exports[`postsReducer handles fetch_posts_SUCCESS action 1`] = `
 Object {
   "after": undefined,
   "favorites": Object {
@@ -142,7 +142,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_refreshed_posts_FAILURE action 1`] = `
+exports[`postsReducer handles fetch_refreshed_posts_FAILURE action 1`] = `
 Object {
   "error": "Look ma, I am an error!",
   "favorites": Object {
@@ -162,7 +162,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_refreshed_posts_REQUEST action 1`] = `
+exports[`postsReducer handles fetch_refreshed_posts_REQUEST action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],
@@ -180,7 +180,7 @@ Object {
 }
 `;
 
-exports[`handles fetch_refreshed_posts_SUCCESS action 1`] = `
+exports[`postsReducer handles fetch_refreshed_posts_SUCCESS action 1`] = `
 Object {
   "after": undefined,
   "favorites": Object {
@@ -207,7 +207,7 @@ Object {
 }
 `;
 
-exports[`returns the same state for posts reducer on an unhandled action 1`] = `
+exports[`postsReducer returns the same state for posts reducer on an unhandled action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],

@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "main": "index.js",
   "dependencies": {
@@ -28,15 +30,20 @@
     "babel-eslint": "^8.2.2",
     "babel-jest": "22.4.1",
     "babel-preset-react-native": "4.0.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16.3": "^1.4.1",
     "eslint": "^4.19.1",
     "eslint-config-wix": "^1.1.18",
     "eslint-plugin-react-native": "^3.2.1",
     "jest": "^23.6.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.6.3",
     "react-test-renderer": "^16.3.0-alpha.1",
     "redux-immutable-state-invariant": "^2.1.0",
     "redux-mock-store": "^1.5.3"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "./src/jest.config.js"
   }
 }

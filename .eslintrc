@@ -13,6 +13,7 @@
     "no-restricted-globals": ["error", "fit", "fdescribe"]
   },
   "globals": {
-    "waitFor": true
+    "waitFor": true,
+    "jest": true
   }
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`creates add_to_favorite action 1`] = `
+exports[`favoriteActions creates add_to_favorite action 1`] = `
 Object {
   "data": Object {
     "id": "98vj9e",
@@ -12,7 +12,7 @@ Object {
 }
 `;
 
-exports[`creates remove_from_favorite action 1`] = `
+exports[`favoriteActions creates remove_from_favorite action 1`] = `
 Object {
   "data": Object {
     "id": "98vj9e",

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should handle fetch_more_posts_FAILURE action 1`] = `
+exports[`postsActions should handle fetch_more_posts_FAILURE action 1`] = `
 Array [
   Object {
     "type": "fetch_more_posts_REQUEST",
@@ -12,7 +12,7 @@ Array [
 ]
 `;
 
-exports[`should handle fetch_more_posts_SUCCESS action 1`] = `
+exports[`postsActions should handle fetch_more_posts_SUCCESS action 1`] = `
 Array [
   Object {
     "type": "fetch_more_posts_REQUEST",
@@ -43,7 +43,7 @@ Array [
 ]
 `;
 
-exports[`should handle fetch_posts_FAILURE action 1`] = `
+exports[`postsActions should handle fetch_posts_FAILURE action 1`] = `
 Array [
   Object {
     "type": "fetch_posts_REQUEST",
@@ -55,7 +55,7 @@ Array [
 ]
 `;
 
-exports[`should handle fetch_posts_SUCCESS action 1`] = `
+exports[`postsActions should handle fetch_posts_SUCCESS action 1`] = `
 Array [
   Object {
     "type": "fetch_posts_REQUEST",
@@ -86,7 +86,7 @@ Array [
 ]
 `;
 
-exports[`should handle fetch_refreshed_posts_FAILURE action 1`] = `
+exports[`postsActions should handle fetch_refreshed_posts_FAILURE action 1`] = `
 Array [
   Object {
     "type": "fetch_refreshed_posts_REQUEST",
@@ -98,7 +98,7 @@ Array [
 ]
 `;
 
-exports[`should handle fetch_refreshed_posts_SUCCESS action 1`] = `
+exports[`postsActions should handle fetch_refreshed_posts_SUCCESS action 1`] = `
 Array [
   Object {
     "type": "fetch_refreshed_posts_REQUEST",

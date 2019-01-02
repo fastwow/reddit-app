@@ -10,8 +10,10 @@ import styles from './styles';
 import * as postsActions from '../../actions/postsActions';
 import * as filterActions from '../../actions/filterActions';
 import Filter from '../../components/posts/filter/Filter';
+import applyFilter from '../../components/posts/filter/filterProcessor';
 
-class TopPosts extends Component {
+// Use named export for unconnected component (for tests)
+export class TopPosts extends Component {
 
   constructor(props) {
     super(props);
@@ -55,7 +57,7 @@ class TopPosts extends Component {
 
   onClick = item => {
     viewPost(this.props.componentId, item);
-  }
+  };
 }
 
 TopPosts.propTypes = {
@@ -66,7 +68,6 @@ TopPosts.propTypes = {
   filter: PropTypes.object.isRequired,
   shouldApplyFilter: PropTypes.bool,
   posts: PropTypes.array,
-  navigator: PropTypes.object,
   after: PropTypes.string,
   componentId: PropTypes.string,
 };
@@ -83,14 +84,6 @@ const mapStateToProps = ({posts, filter}) => {
     after: posts.after,
   };
 };
-
-const applyFilter = (posts, filter) => {
-  const lowerCaseSearchTerm = filter.searchTerm.toLowerCase();
-  return posts.filter(item => {
-    return item.title.toLowerCase().includes(lowerCaseSearchTerm);
-  });
-};
-
 
 const mapDispatchToProps = dispatch => {
   return {

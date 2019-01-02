@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`handles filter_posts action 1`] = `
+exports[`filterReducer handles filter_posts action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],
@@ -18,7 +18,7 @@ Object {
 }
 `;
 
-exports[`returns the same state for filter reducer on an unhandled action 1`] = `
+exports[`filterReducer returns the same state for filter reducer on an unhandled action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],

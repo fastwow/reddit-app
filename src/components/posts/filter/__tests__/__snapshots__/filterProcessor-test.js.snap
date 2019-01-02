@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filterProccessor Filter applied correctly 1`] = `
+Array [
+  Object {
+    "id": "a6q94b",
+    "thumbnail": "https://b.thumbs.redditmedia.com/cjYmtjKiy9OT1y43RFMuTkcH_WmTM66RsSuN7c6xkhA.jpg",
+    "title": "This church looks like a gingerbread house.",
+    "url": "https://i.imgur.com/GsoJi0d.gifv",
+  },
+]
+`;

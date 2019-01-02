@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 import Posts from '../../components/posts/Posts';
 import styles from '../topposts/styles';
 
-class Favorites extends Component {
+// Use named export for unconnected component (for tests)
+export class Favorites extends Component {
 
   constructor(props) {
     super(props);
@@ -28,7 +29,6 @@ class Favorites extends Component {
 
 Favorites.propTypes = {
   posts: PropTypes.array,
-  navigator: PropTypes.object,
   componentId: PropTypes.string,
 };
 

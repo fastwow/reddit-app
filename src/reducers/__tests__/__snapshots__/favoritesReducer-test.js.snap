@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`handles add_to_favorite action 1`] = `
+exports[`favoritesReducer handles add_to_favorite action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],
@@ -25,7 +25,7 @@ Object {
 }
 `;
 
-exports[`handles remove_from_favorite action 1`] = `
+exports[`favoritesReducer handles remove_from_favorite action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],
@@ -44,7 +44,7 @@ Object {
 }
 `;
 
-exports[`returns the same state for favorites reducer on an unhandled action 1`] = `
+exports[`favoritesReducer returns the same state for favorites reducer on an unhandled action 1`] = `
 Object {
   "favorites": Object {
     "posts": Array [],

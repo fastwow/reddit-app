@@ -6,7 +6,8 @@ import styles from './styles';
 import {connect} from 'react-redux';
 import {addToFavorite, removeFromFavorite} from '../../actions/favoriteActions';
 
-class PostPage extends Component {
+// Use named export for unconnected component (for tests)
+export class PostPage extends Component {
 
   constructor(props) {
     super(props);

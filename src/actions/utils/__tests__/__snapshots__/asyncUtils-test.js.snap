@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`builds a proper object for async actions on buildAsyncActions 1`] = `
+exports[`asyncUtils builds a proper object for async actions on buildAsyncActions 1`] = `
 Object {
   "error": [Error: Look ma, I am an error!],
   "type": "TEST_API_FAILURE",
 }
 `;
 
-exports[`builds a proper object for async actions on buildAsyncActions 2`] = `
+exports[`asyncUtils builds a proper object for async actions on buildAsyncActions 2`] = `
 Object {
   "type": "TEST_API_REQUEST",
 }
 `;
 
-exports[`builds a proper object for async actions on buildAsyncActions 3`] = `
+exports[`asyncUtils builds a proper object for async actions on buildAsyncActions 3`] = `
 Object {
   "data": Array [
     Object {
@@ -25,7 +25,7 @@ Object {
 }
 `;
 
-exports[`returns the proper action names for TEST_API on asyncActionNames 1`] = `
+exports[`asyncUtils returns the proper action names for TEST_API on asyncActionNames 1`] = `
 Object {
   "failure": "TEST_API_FAILURE",
   "request": "TEST_API_REQUEST",
