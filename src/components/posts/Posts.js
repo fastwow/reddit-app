@@ -28,7 +28,7 @@ const Posts = ({
     keyExtractor={item => item.id}
     onEndReached={fetchMore}
     onEndReachedThreshold={0.5}
-    contentContainerStyle={[{flexGrow: 1}, isEmptyList ? {justifyContent: 'center'} : null]}
+    contentContainerStyle={[{flexGrow: 1}, isEmptyList ? {justifyContent: 'center', alignItems: 'center'} : null]}
     ListFooterComponent={() => !shouldApplyFilter && fetchMore && !isEmptyList ? <ProgressBar/> : null}
     ListEmptyComponent={() => <Text style={styles.emptyMessageStyle}>{error && isEmptyList ? error :
       shouldApplyFilter ? 'No matching posts found' : 'No posts yet'}</Text>}/>);
