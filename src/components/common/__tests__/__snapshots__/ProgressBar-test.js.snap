@@ -18,22 +18,3 @@ exports[`ProgressBar Renders correctly 1`] = `
   />
 </View>
 `;
-
-exports[`ProgressBar renders correctly 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-      "height": 50,
-      "justifyContent": "center",
-    }
-  }
->
-  <ActivityIndicator
-    animating={true}
-    color="#000000"
-    hidesWhenStopped={true}
-    size="large"
-  />
-</View>
-`;
