@@ -7,9 +7,10 @@ const Filter = ({filter, onChangeText}) => {
 
   return (
     <TextInput
-      selectionColor="#ffffff" style={styles.search}
-      placeholder="Search"
+      style={styles.search}
+      placeholder="Search..."
       value={filter.searchTerm}
+      underlineColorAndroid="transparent"
       onChangeText={onChangeText}/>
   );
 };

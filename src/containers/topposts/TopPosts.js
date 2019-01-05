@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Navigation} from 'react-native-navigation';
@@ -28,14 +28,14 @@ export class TopPosts extends Component {
 
   render() {
     return (
-      <View style={styles.rootContainer}>
+      <SafeAreaView style={styles.rootContainer}>
         <Filter {...this.props} onChangeText={this.onChangeText}/>
         <Posts
           {...this.props}
           onClick={this.onClick}
           refreshPosts={this.refreshPosts}
           fetchMore={this.fetchMore}/>
-      </View>
+      </SafeAreaView>
     );
   }
 
