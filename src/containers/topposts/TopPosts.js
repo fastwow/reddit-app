@@ -11,6 +11,7 @@ import * as postsActions from '../../actions/postsActions';
 import * as filterActions from '../../actions/filterActions';
 import Filter from '../../components/posts/filter/Filter';
 import applyFilter from '../../components/posts/filter/filterProcessor';
+import {componentTestId} from '../../../e2e/helpers';
 
 // Use named export for unconnected component (for tests)
 export class TopPosts extends Component {
@@ -34,7 +35,8 @@ export class TopPosts extends Component {
           {...this.props}
           onClick={this.onClick}
           refreshPosts={this.refreshPosts}
-          fetchMore={this.fetchMore}/>
+          fetchMore={this.fetchMore}
+          testID={componentTestId.TOP_POSTS}/>
       </SafeAreaView>
     );
   }

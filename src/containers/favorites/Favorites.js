@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Posts from '../../components/posts/Posts';
 import styles from '../topposts/styles';
+import {componentTestId} from '../../../e2e/helpers';
 
 // Use named export for unconnected component (for tests)
 export class Favorites extends Component {
@@ -20,6 +21,7 @@ export class Favorites extends Component {
         style={styles.rootContainer}
         {...this.props}
         onClick={this.onClick}
+        testID={componentTestId.FAVORITE_POSTS}
       />
     );
   }

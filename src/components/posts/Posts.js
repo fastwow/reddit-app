@@ -5,9 +5,10 @@ import ProgressBar from '../common/ProgressBar';
 import PostCart from './item/PostCart';
 import styles from '../../containers/topposts/styles';
 import Toast from 'react-native-simple-toast';
+import {createListItemId} from '../../../e2e/helpers';
 
 const Posts = ({
-  isLoading, isRefreshing, posts, error, refreshPosts, onClick, fetchMore, shouldApplyFilter,
+  isLoading, isRefreshing, posts, error, refreshPosts, onClick, fetchMore, shouldApplyFilter, testID
 }) => {
 
   if (error) {
@@ -21,10 +22,13 @@ const Posts = ({
   }
 
   return (<FlatList
+    testID={testID}
     onRefresh={refreshPosts}
     refreshing={isRefreshing}
     data={posts}
-    renderItem={({item}) => <PostCart item={item} viewItem={item => onClick(item)}/>}
+    renderItem={({item, index}) => {
+      return <PostCart testID={createListItemId(index)} item={item} viewItem={item => onClick(item)}/>;
+    }}
     keyExtractor={item => item.id}
     onEndReached={fetchMore}
     onEndReachedThreshold={0.5}
@@ -43,6 +47,7 @@ Posts.propTypes = {
   onClick: PropTypes.func.isRequired,
   fetchMore: PropTypes.func,
   shouldApplyFilter: PropTypes.bool,
+  testID: PropTypes.string.isRequired
 };
 
 Posts.defaultProps = {

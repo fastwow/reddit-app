@@ -6,8 +6,8 @@ import styles from './styles';
 class PostCart extends PureComponent {
 
   render() {
-    const {item, viewItem} = this.props;
-    return (<TouchableOpacity style={styles.listItem} onPress={() => viewItem(item)}>
+    const {item, viewItem, testID} = this.props;
+    return (<TouchableOpacity testID={testID} style={styles.listItem} onPress={() => viewItem(item)}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -29,6 +29,7 @@ class PostCart extends PureComponent {
 PostCart.propTypes = {
   item: PropTypes.object.isRequired,
   viewItem: PropTypes.func.isRequired,
+  testID: PropTypes.string.isRequired
 };
 
 export default PostCart;

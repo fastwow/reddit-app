@@ -20,6 +20,7 @@ exports[`PostCart Renders correctly 1`] = `
       "padding": 6,
     }
   }
+  testID="1234"
 >
   <View
     style={
@@ -87,6 +88,7 @@ exports[`PostCart Renders with image placeholder 1`] = `
       "padding": 6,
     }
   }
+  testID="1234"
 >
   <View
     style={

@@ -16,6 +16,7 @@ describe('Posts', () => {
       onClick: jest.fn(),
       fetchMore: jest.fn(),
       shouldApplyFilter: false,
+      testID: '1234'
     };
     const wrapper = shallow(<Posts {...props}/>);
     expect(wrapper.contains(<ProgressBar/>)).toBe(true);
@@ -31,6 +32,7 @@ describe('Posts', () => {
       onClick: jest.fn(),
       fetchMore: jest.fn(),
       shouldApplyFilter: false,
+      testID: '1234'
     };
     const wrapper = shallow(<Posts {...props}/>);
     expect(wrapper.find('FlatList').props().data).toEqual(posts);
@@ -47,6 +49,7 @@ describe('Posts', () => {
       onClick: jest.fn(),
       fetchMore: jest.fn(),
       shouldApplyFilter: false,
+      testID: '1234'
     };
     shallow(<Posts {...props}/>);
     expect(Toast.show).toHaveBeenCalledWith(error);

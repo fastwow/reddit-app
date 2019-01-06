@@ -5,6 +5,7 @@ import {Navigation} from 'react-native-navigation';
 import styles from './styles';
 import {connect} from 'react-redux';
 import {addToFavorite, removeFromFavorite} from '../../actions/favoriteActions';
+import {componentTestId} from '../../../e2e/helpers';
 
 // Use named export for unconnected component (for tests)
 export class PostPage extends Component {
@@ -27,6 +28,7 @@ export class PostPage extends Component {
 
     return (
       <WebView
+        testID={componentTestId.POST_WEB_VIEW}
         source={{uri: this.props.post.url}}
         style={styles.webView}
       />
