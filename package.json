@@ -6,8 +6,10 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "jest",
-    "test-ios": "detox build --configuration ios.sim.debug && detox test --configuration ios.sim.debug",
-    "test-android": "detox build --configuration android.emu.debug && detox test --configuration android.emu.debug -l verbose"
+    "test-ios-debug": "detox build --configuration ios.sim.debug && detox test --configuration ios.sim.debug --cleanup",
+    "test-ios-release": "detox build --configuration ios.sim.release && detox test --configuration ios.sim.release --cleanup",
+    "test-android-debug": "detox build --configuration android.emu.debug && detox test --configuration android.emu.debug -l verbose --cleanup",
+    "test-android-release": "detox build --configuration android.emu.release && detox test --configuration android.emu.release -l verbose --cleanup"
   },
   "main": "index.js",
   "dependencies": {
