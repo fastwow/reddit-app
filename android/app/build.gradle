@@ -107,7 +107,7 @@ android {
         applicationId "com.reddit"
         minSdkVersion 19
         targetSdkVersion 25
-        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative55"
+        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative57"
         versionCode 1
         versionName "1.0"
         ndk {

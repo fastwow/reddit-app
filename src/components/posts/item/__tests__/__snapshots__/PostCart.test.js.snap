@@ -51,9 +51,6 @@ exports[`PostCart Renders correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontSize": 20,
@@ -119,9 +116,6 @@ exports[`PostCart Renders with image placeholder 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontSize": 20,
