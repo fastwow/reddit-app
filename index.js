@@ -1,6 +1,6 @@
 import {Navigation} from 'react-native-navigation';
 import {registerScreens} from './src/screens';
-import configureStore from './src/config/store';
+import configureStore from './src/shared/config/store';
 import {createTabs} from './src/navigation';
 import {persistStore} from 'redux-persist';
 import {Provider} from 'react-redux';

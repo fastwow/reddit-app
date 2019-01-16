@@ -1,8 +1,8 @@
 import {Navigation} from 'react-native-navigation';
-import {FAVORITES, POST, TOP_POSTS} from './constants/componentName';
-import PostPage from './components/post/PostPage';
-import TopPosts from './containers/topposts/TopPosts';
-import Favorites from './containers/favorites/Favorites';
+import {FAVORITES, POST, TOP_POSTS} from './shared/constants/componentName';
+import PostPage from './shared/components/post/PostPage';
+import TopPosts from './topposts/TopPosts';
+import Favorites from './favorites/Favorites';
 
 export const registerScreens = (Provider, store) => {
   Navigation.registerComponentWithRedux(FAVORITES,

@@ -1,5 +1,5 @@
 import {Navigation} from 'react-native-navigation';
-import {FAVORITES, POST, TOP_POSTS} from './constants/componentName';
+import {FAVORITES, POST, TOP_POSTS} from './shared/constants/componentName';
 
 export const createTabs = () => Navigation.setRoot({
   root: {
