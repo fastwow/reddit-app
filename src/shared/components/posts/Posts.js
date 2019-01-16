@@ -21,13 +21,17 @@ const Posts = ({
     return <ProgressBar/>;
   }
 
+  const viewItem = item => {
+    onClick(item);
+  };
+
   return (<FlatList
     testID={testID}
     onRefresh={refreshPosts}
     refreshing={isRefreshing}
     data={posts}
     renderItem={({item, index}) => {
-      return <PostCart testID={createListItemId(index)} item={item} viewItem={item => onClick(item)}/>;
+      return <PostCart testID={createListItemId(index)} item={item} viewItem={viewItem}/>;
     }}
     keyExtractor={item => item.id}
     onEndReached={fetchMore}
