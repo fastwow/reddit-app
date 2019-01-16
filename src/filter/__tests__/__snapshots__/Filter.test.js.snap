@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Renders correctly 1`] = `
+<TextInput
+  allowFontScaling={true}
+  onChangeText={[MockFunction]}
+  placeholder="Search..."
+  style={
+    Object {
+      "borderColor": "#d6d7da",
+      "borderRadius": 20,
+      "borderWidth": 2,
+      "color": "#000000",
+      "fontSize": 20,
+      "height": 40,
+      "margin": 5,
+      "textAlign": "center",
+    }
+  }
+  underlineColorAndroid="transparent"
+  value="cat"
+/>
+`;

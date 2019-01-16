@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filterReducer handles filter_posts action 1`] = `
+Object {
+  "filter": Object {
+    "searchTerm": "",
+  },
+}
+`;
+
+exports[`filterReducer returns the same state for filter reducer on an unhandled action 1`] = `
+Object {
+  "filter": Object {
+    "searchTerm": "",
+  },
+}
+`;

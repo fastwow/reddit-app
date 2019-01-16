@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`favoriteActions creates add_to_favorite action 1`] = `
+Object {
+  "data": Object {
+    "id": "98vj9e",
+    "thumbnail": "https://b.thumbs.redditmedia.com/NFJ5zzCUnxTgAl71EkjSSCePc7wtcCLqTdbYgrwJkdU.jpg",
+    "title": "Blinks of affection",
+    "url": "https://v.redd.it/1zhxx58rhp421",
+  },
+  "type": "add_to_favorite",
+}
+`;
+
+exports[`favoriteActions creates remove_from_favorite action 1`] = `
+Object {
+  "data": Object {
+    "id": "98vj9e",
+    "thumbnail": "https://b.thumbs.redditmedia.com/NFJ5zzCUnxTgAl71EkjSSCePc7wtcCLqTdbYgrwJkdU.jpg",
+    "title": "Blinks of affection",
+    "url": "https://v.redd.it/1zhxx58rhp421",
+  },
+  "type": "remove_from_favorite",
+}
+`;
