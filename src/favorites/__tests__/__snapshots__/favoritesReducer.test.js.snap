@@ -2,9 +2,6 @@
 
 exports[`favoritesReducer handles add_to_favorite action 1`] = `
 Object {
-  "favorites": Object {
-    "posts": Array [],
-  },
   "posts": Array [
     Object {
       "id": "98vj9e",
@@ -24,9 +21,6 @@ Object {
 
 exports[`favoritesReducer handles remove_from_favorite action 1`] = `
 Object {
-  "favorites": Object {
-    "posts": Array [],
-  },
   "posts": Array [
     Object {
       "id": "98vj9e",
@@ -40,8 +34,6 @@ Object {
 
 exports[`favoritesReducer returns the same state for favorites reducer on an unhandled action 1`] = `
 Object {
-  "favorites": Object {
-    "posts": Array [],
-  },
+  "posts": Array [],
 }
 `;

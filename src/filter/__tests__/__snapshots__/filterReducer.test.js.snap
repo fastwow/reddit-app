@@ -2,16 +2,12 @@
 
 exports[`filterReducer handles filter_posts action 1`] = `
 Object {
-  "filter": Object {
-    "searchTerm": "",
-  },
+  "searchTerm": "",
 }
 `;
 
 exports[`filterReducer returns the same state for filter reducer on an unhandled action 1`] = `
 Object {
-  "filter": Object {
-    "searchTerm": "",
-  },
+  "searchTerm": "",
 }
 `;
